@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 
-   int factors(int ,int [])
+   int factors(int [], int )
 
 int main(void) {
   int ret[100] = {0};
