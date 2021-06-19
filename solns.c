@@ -1,17 +1,15 @@
 #include <stdio.h>
 #include <assert.h>
-
 int max(int a[],int n){
   int max= a[0];
   for(int i=0; i<n; i++){
+    if(max < a[i]);
     if(max < a[i]){
     max=a[i];
   }
 }
 return max;
 }
-
-
 int min(int b[], int n){
   int min = b[0];
   for(int i=0; i<n; i++){
@@ -21,8 +19,8 @@ int min(int b[], int n){
        }
        return min;
        }
-       
-  
+
+
        float average(int c[], int n){
          float average =0;
          for(int i=0; i<n; i++){
@@ -31,8 +29,8 @@ int min(int b[], int n){
          average = average/n;
          return average;
        }
-       
-       
+
+
        int mode(int d[], int n){
          int count = 0;
          int mode = 0;
@@ -49,8 +47,8 @@ int min(int b[], int n){
          }
           return mode;
              }
-             
-             
+
+
       int factors(int n,int e[]){
         int i=0;
         while(n%2==0){
