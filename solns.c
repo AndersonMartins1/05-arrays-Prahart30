@@ -1,69 +1,72 @@
 #include <stdio.h>
 #include <assert.h>
-int max(int a[],int n){
-  int max= a[0];
-  for(int i=0; i<n; i++){
-    if(max < a[i]);
-    if(max < a[i]){
-    max=a[i];
+ int max(int a[],int n)
+ {
+ int max=0;
+ for(int i=0;i<n;i++)
+  {
+  if(a[i]>max)
+  	max=a[i];
   }
+  return max;
+ }
+int min(int a[],int n)
+{
+int min=a[0];
+for(int i=0;i<n;i++)
+{
+if(a[i]<min)
+	min=a[i];
 }
-return max;
+return min;
 }
-int min(int b[], int n){
-  int min = b[0];
-  for(int i=0; i<n; i++){
-    if(min > b[i]){
-       min = b[i];
-       }
-       }
-       return min;
-       }
-
-
-       float average(int c[], int n){
-         float average =0;
-         for(int i=0; i<n; i++){
-           average+= c[i];
-         }
-         average = average/n;
-         return average;
-       }
-
-
-       int mode(int d[], int n){
-         int count = 0;
-         int mode = 0;
-         for(int i=0; i<n; i++){
-           int counts =0;
-           for(int j=0; j<n; j++){
-             if(d[j]==d[i]){
-               counts++;
-             }
-           }
-           if(counts > count)
-             count=counts;
-           mode = d[i];
-         }
-          return mode;
-             }
-
-
-      int factors(int n,int e[]){
-        int i=0;
-        while(n%2==0){
-          e[i]=2;
-          i++;
-          n=n/2;
-        }
-        for(int j=3; j<=n;j++){
-          while(n%j==0){
-            e[i]=j;
-            i++;
-            n=n/j;
-          }
-        }
-        if(n>2)
-          e[i]=n;
-        return i;
-      }
+float average(int a[],int n)
+{
+float sum=0;
+for(int i=0;i<n;i++)
+ {
+ sum=sum+a[i];
+ }
+return sum/n;
+}
+int mode(int a[],int n)
+{
+int maxcount=0;
+int maxvalue=0;
+for(int i=0;i<n;i++)
+ {
+ int count=0;
+ for(int j=0;j<n;j++)
+  {
+  if(a[j]==a[i])
+  count++;
+  }
+ if(count>maxcount)
+  {
+  maxcount=count;
+  maxvalue=a[i];
+  } 
+ }
+return maxvalue; 
+}
+int factors(int n,int a[])
+{
+int count=0;
+for(int i=0;i<100;i++)
+	{
+	if(n>0)
+	{
+	for(int j=2;j<100;j++)
+	{
+	if(n%j==0)
+		{
+		a[i]=j;
+		count++;
+		n=n/j;
+		break;
+		}
+	}
+	}
+	}
+return count;
+}
